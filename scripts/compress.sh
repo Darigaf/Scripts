@@ -10,7 +10,7 @@ fi
 mkdir compressed;
 for i in *"$1";
 do 
-	ffmpeg -i "$i" -vcodec libx265 -crf 18 -tag:v hvc1 -preset slow -c:a copy ./compressed/"$i";
+	ffmpeg -i "$i" -vcodec libx265 -crf 18 -tag:v hvc1 -preset veryslow -c:a copy ./compressed/"$i";
 done
 
 
