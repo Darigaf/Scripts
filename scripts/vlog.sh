@@ -1,7 +1,7 @@
 #! /bin/sh
 #Script that records webcam and microphone sound using ffmpeg
 
-DATE=$(date +%d_%m_%Y\ %H_%M_%S);
+DATE=$(date +%Y_%m_%d\ %S_%M_%H);
 OUTPUT_NAME="$DATE $2";
 VIDEO_DEVICE="$1";
 if [ -z "$1" ];

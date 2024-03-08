@@ -9,5 +9,6 @@ then
 	exit 5;
 fi
 
+mkdir "$FOLDER_NAME";
 cd "$FOLDER_NAME" && mkdir Familia Importantes Amigos Animais Paisagens Natureza Roles Aleatorio Livros Engracados Eu;
 
