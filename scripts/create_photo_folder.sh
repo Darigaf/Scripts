@@ -10,5 +10,5 @@ then
 fi
 
 mkdir "$FOLDER_NAME";
-cd "$FOLDER_NAME" && mkdir Familia Importantes Amigos Animais Paisagens Natureza Roles Aleatorio Livros Engracados Eu;
+cd "$FOLDER_NAME" && mkdir Familia Importantes Amigos Animais Paisagens Natureza Roles Aleatorio Livros Engracados Eu Dia_Dia;
 
