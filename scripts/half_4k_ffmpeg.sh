@@ -3,7 +3,7 @@
 if [ -z "$1" ];
 then
 	printf "This script iterates between all files, with the selected extension, of the current folder and halfs its dimensions"
-	printf "Usage: watermark_date.sh VIDEO_FILE_EXTENSION\n";
+	printf "Usage: half_4k_ffmpeg.sh VIDEO_FILE_EXTENSION\n";
 	echo "You must provide what is the extension of the files you want to half dimensions";
 	exit 5;
 fi
