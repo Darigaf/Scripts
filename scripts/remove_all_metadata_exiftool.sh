@@ -4,13 +4,13 @@ remove_metadata() {
 	printf"Removing Metadata\n";
 	for i in *"$1";
 	do 
-			exiftool -all:all= -overwrite_original_in_place "$i"
+			exiftool -all:all= -tagsFromFile @ -exif:Orientation -overwrite_original_in_place "$i"
 	done
 }
 
 if [ -z "$1" ];
 then
-	printf "This script iterates between all files, with the selected extension, of the current folder and removes all metadata from it\n";
+	printf "This script iterates between all files, with the selected extension, of the current folder and removes all metadata except rotation from it\n";
 	printf "Usage: remove_metadata_exiftool.sh FILE_EXTENSION \n";
 	printf "You must provide what is the extension of the files you want to remove metadata\n";
 	exit 5;
