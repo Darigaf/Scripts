@@ -35,7 +35,7 @@ download_images() {
 #Converte e une as imagens baixadas em um pdf único
 images_to_pdf(){
 	printf "\n\nCONVERTENDO IMAGENS PARA PDF\n\n"
-	convert ./"$NOME_ARQUIVO_FINAL"/imagens/"$PREFIX"*"$EXTENSION" ./"$NOME_ARQUIVO_FINAL"/"$NOME_ARQUIVO_FINAL".pdf
+	magick  ./"$NOME_ARQUIVO_FINAL"/imagens/"$PREFIX"*"$EXTENSION" -quality 100 ./"$NOME_ARQUIVO_FINAL"/"$NOME_ARQUIVO_FINAL".pdf
 }
 
 #Faz o ocr do pdf
