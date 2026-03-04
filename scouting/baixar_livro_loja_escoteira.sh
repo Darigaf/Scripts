@@ -35,7 +35,7 @@ download_images() {
 #Converte e une as imagens baixadas em um pdf único
 images_to_pdf(){
 	printf "\n\nCONVERTENDO IMAGENS PARA PDF\n\n"
-	magick  ./"$NOME_ARQUIVO_FINAL"/imagens/"$PREFIX"*"$EXTENSION" -quality 100 ./"$NOME_ARQUIVO_FINAL"/"$NOME_ARQUIVO_FINAL".pdf
+	convert ./"$NOME_ARQUIVO_FINAL"/imagens/"$PREFIX"*"$EXTENSION" -quality 100 ./"$NOME_ARQUIVO_FINAL"/"$NOME_ARQUIVO_FINAL".pdf
 }
 
 #Faz o ocr do pdf
@@ -65,7 +65,6 @@ mkdir "$NOME_ARQUIVO_FINAL" "$NOME_ARQUIVO_FINAL"/imagens
 
 download_images;
 images_to_pdf;
-clean_files;
 
 printf "DOWNLOAD FINALIZADO\n\n\n\n"
 
@@ -73,8 +72,16 @@ printf "\nDeseja executar ocr no pdf para torna-lo selecionavel e pesquisavel?(S
 read -r DESEJA_OCR
 case "$DESEJA_OCR" in
 	[sS]) ocr_pdf;;
+	[nN]) ;;
            *) printf "Opcao Invalida\n";;
 esac
 
+printf "\nDeseja deletar as imagens baixadas?(S/N)\n";
+read -r LIMPAR
+case "$LIMPAR" in
+	[sS]) clean_files;;
+	[nN]) ;;
+           *) printf "Opcao Invalida\n";;
+esac
 printf "\nARQUIVO %s.pdf SALVO COM SUCESSO\n" "$NOME_ARQUIVO_FINAL"
 
