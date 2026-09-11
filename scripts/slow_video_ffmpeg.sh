@@ -10,8 +10,9 @@ fi
 mkdir slowed;
 for i in *"$1";
 do 
-		ffmpeg -i "$i" -map 0:v -c:v copy -bsf:v h264_mp4toannexb ./"$i".raw.h264
-		ffmpeg -fflags +genpts -r 30 -i ./"$i".raw.h264 -c:v copy ./slowed/"$i"_slowed.mp4
-		rm ./"$i".raw.h264
+		#ffmpeg -i "$i" -map 0:v -c:v copy -bsf:v h264_mp4toannexb ./"$i".raw.h264
+		#ffmpeg -fflags +genpts -r 30 -i ./"$i".raw.h264 -c:v copy ./slowed/"$i"_slowed.mp4
+		#rm ./"$i".raw.h264
+		ffmpeg -i "$i" -c copy -metadata:s:v:0 rotate="$2" ./slowed/"$i"_slowed.mp4
 done
 

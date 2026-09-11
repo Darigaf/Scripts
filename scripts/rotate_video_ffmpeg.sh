@@ -10,6 +10,6 @@ fi
 mkdir rotated;
 for i in *"$1";
 do 
-		ffmpeg -display_rotation "$2" -i "$i" -codec copy ./rotated/"$i";
+			ffmpeg -i "$i" -c copy -metadata:s:v rotate="$2" ./rotated/"$i";
 done
 
