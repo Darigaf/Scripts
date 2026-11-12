@@ -28,7 +28,11 @@ mkdir $FOLDER_NAME;
 
 cd $FOLDER_NAME;
 
-mkdir Videos Entrega Entrega/Lote_{1..5};
+mkdir Entrega Entrega/Lote_{1..5};
 cd .. 
+mkdir Videos
+mv ./*MP4 ./Videos
 mv ./*CR* $FOLDER_NAME/
+cd ./Videos 
+vars
 
